@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="./images/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/font-awesome.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/lightbox.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Lucas de Melo | Portfolio</title>
+    <style>
+      .language-switcher {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px 15px;
+        border-radius: 25px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        gap: 8px;   
+      }
+      
+      .language-switcher .btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        padding: 0;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .language-switcher .btn img {
+        width: 150%;
+        height: 150%;
+        object-fit: cover;
+      }
+      .language-switcher .btn.active {
+        border-color: var(--bs-primary); 
+      }
+      
+      .language-switcher .btn:not(.active) {
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+      
+     .language-switcher .btn:not(.active):hover {
+        border-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+      <button class="btn btn-sm active" onclick="switchLanguage('en')" id="btn-en">
+        <img src="./images/en.png" alt="Mudar idioma para Inglês">
+      </button>
+      <button class="btn btn-sm" onclick="switchLanguage('pt')" id="btn-pt">
+        <img src="./images/pt.png" alt="Mudar idioma para Português">
+      </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header vh-100 text-center position-relative">
+      <div
+        class="text-container position-relative d-flex flex-column justify-content-center align-items-center h-100"
+      >
+        <h5 class="text-primary fs-3 fw-bold text-uppercase" data-en="Hey there!" data-pt="Olá!">Hey there!</h5>
+        <h1 id="typing-text" class="display-1 fw-bold text-white"></h1>
+
+        <p class="roles text-white text-uppercase fs-4">
+          <span data-en=" Hobbyist in JavaScript and C++ | " data-pt=" Entusiasta em JavaScript e C++ | "> Hobbyist in JavaScript and C++ | </span>
+          <span data-en=" Sim racer " data-pt=" Piloto de simulador "> Sim racer </span>        
+        </p>
+
+        <a href="#about" class="btn btn-outline-light btn-lg mt-3">
+          <div class="d-flex">
+            <div class="me-3">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="text-start">
+              <span data-en="More About Me" data-pt="Mais Sobre Mim">More About Me</span>
+            </div>
+          </div>
+        </a>
+
+        <div class="social d-flex gap-3 position-absolute">
+          <a
+            href="https://www.youtube.com/@LucasHydra"
+            target="_blank"
+          >
+            <i class="fab fa-youtube fa-3x text-white"></i>
+          </a>
+          <a href="https://github.com/LMbX1" target="_blank">
+            <i class="fab fa-github fa-3x text-white"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about bg-light py-5">
+      <div class="container">
+        <div class="text-center">
+          <h4 class="text-uppercase fw-bold text-primary" data-en="About Me" data-pt="Sobre Mim">About Me</h4>
+          <hr class="w-25 mx-auto" />
+          <h2 class="mb-4" data-en="Let me introduce myself." data-pt="Deixe-me me apresentar.">Let me introduce myself.</h2>
+        </div>
+        <div class="about-content d-flex gap-5 align-items-center h-100">
+          <img
+            src="./images/about-me.jpg"
+            alt=""
+            class="about-img img-fluid rounded-circle"
+          />
+          <p class="lead" data-en="I am a Brazilian coding hobbyist currently living in Rondonópolis, Brasil.
+                  I've developed skills in C++, 
+                  and web technologies like HTML, CSS, and mobile like React-native,
+                  sharing my projects and learning journey."
+          data-pt="Sou um entusiasta brasileiro de programação atualmente vivendo em Rondonópolis, Brasil.
+                  Desenvolvi habilidades em C++ e tecnologias web como HTML, CSS, e mobile como React-native,
+                  compartilhando meus projetos e jornada de aprendizado.">
+            I am a Brazilian coding hobbyist currently
+            living in Rondonópolis, Brasil. I've developed skills in C++,
+            and web technologies like HTML, CSS, and mobile like React-native, sharing my projects
+            and learning journey.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profiles and Skills -->
+    <section class="profile my-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="text-uppercase fw-bold" data-en="Education" data-pt="Educação">Education</h3>
+            <p data-en="Here is some more info about myself to help you get to know me better." data-pt="Aqui estão algumas informações adicionais sobre mim para te ajudar a me conhecer melhor.">
+              Here is some more info about myself to help you get to know me
+              better.
+            </p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item mb-3">
+                <h5 class="text-transform">
+                  <i class="fas fa-book text-primary"></i> <span data-en="B.A. in Information System:" data-pt="Bacharelado em Sistema de Informação:">B.A. in Information System:</span>
+                </h5>
+                <p class="ml-5 py-2">
+                  <a href="https://ufr.edu.br/" target="_blank"
+                  data-en="Federal University of Rondonópolis - UFR"
+                  data-pt="Universidade Federal de Rondonópolis - UFR">Federal University of Rondonópolis - UFR
+                  </a>
+                </p>
+              </li>
+
+              <li class="list-group-item mb-3">
+                <h5 class="text-transform">
+                  <i class="fas fa-building text-primary"></i> <span data-en="Current Position:" data-pt="Posição Atual:">Current Position:</span>
+                </h5>
+                <p data-en="React-native and PHP developer" data-pt="Desenvolvedor React-native e PHP">React-native and PHP developer</p>
+              </li>
+              <li class="list-group-item mb-3">
+                <h5 class="text-transform">
+                  <i class="fab fa-youtube-square text-primary"></i> <span data-en="Youtube Playlist:" data-pt="Playlist do Youtube:">Youtube Playlist:</span>
+                </h5>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/watch?v=ledFON5RmtU&t"
+                      target="_blank"
+                      >Brands Hatch Nissan GT-R GT3 Sprint LFM Full race</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/watch?v=SFZuMX6yQx4"
+                      target="_blank"
+                      >Perdi a freada e tentei um 360° overtake | Assetto Corsa Competizione</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="list-group-item mb-3">
+                <h5 class="text-transform">
+                  <i class="fas fa-envelope text-primary"></i> Email:
+                </h5>
+                <p>lucasmelofilho@gmail.com</p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3 class="text-uppercase fw-bold" data-en="Skills" data-pt="Habilidades">Skills</h3>
+            <p data-en="Here is a list of my skills 😉" data-pt="Aqui está uma lista das minhas habilidades 😉">Here is a list of my skills 😉</p>
+            <h5>
+              <i class="fas fa-square text-primary"></i> HTML/ CSS / Bootstrap
+            </h5>
+            <h5><i class="fas fa-square text-primary"></i> PHP</h5>
+            <h5><i class="fas fa-square text-primary"></i> JavaScript</h5>
+            <h5><i class="fas fa-square text-primary"></i> C/C++</h5>
+            <h5><i class="fas fa-square text-primary"></i> Delphi/Pascal</h5>
+            <h5><i class="fas fa-square text-primary"></i> React/Native</h5>
+            <h5><i class="fas fa-square text-primary"></i> PostgreSQL/MySQL</h5>
+
+          </div>
+        </div>
+        <div class="row mt-5 text-center">
+          <div class="col-12">
+            <a
+              href="#contact-form"
+              class="btn btn-dark btn-lg text-uppercase px-5 mx-3 my-2"
+              data-en="Send me a Message"
+              data-pt="Me mande uma Mensagem"
+              >Send me a Message</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h4 class="text-uppercase fw-bold text-primary" data-en="Portfolio" data-pt="Portfólio">
+            Portfolio
+          </h4>
+          <hr class="w-25 mx-auto" />
+          <h2 class="mb-4" data-en="Check Out My Work" data-pt="Confira Meu Trabalho">Check Out My Work</h2>
+          <p class="lead" data-en="Here is a small sample of my projects." data-pt="Aqui está uma pequena amostra dos meus projetos.">Here is a small sample of my projects.</p>
+        </div>
+        <div class="row">
+          <!-- Films system -->
+          <div class="col-md-6 mb-4">
+            <div class="project shadow-lg rounded-5">
+              <a
+                href="./images/my-project-01.gif"
+                data-lightbox="images"
+                data-title="<a href='https://github.com/LMbX1/trabalhopwebfinal' target='_blank' style='color:white; text-decoration:underline;'> Visit repository </a>"
+              >
+                <img
+                  src="./images/my-project-01.gif"
+                  alt=""
+                  class="img-fluid rounded-3"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- UFR security report test app -->
+          <div class="col-md-6 mb-4">
+            <div class="project shadow-lg rounded-5">
+              <a
+                href="./images/my-project-02.gif"
+                data-lightbox="images"
+                data-title="<a href='https://github.com/LMbX1/react-native-ufr-app' target='_blank' style='color:white; text-decoration:underline;'> Visit UFR security repository </a>"
+              >
+                <img
+                  src="./images/my-project-02.gif"
+                  alt=""
+                  class="img-fluid rounded-3"
+                />
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services text-bg-dark py-5 position-relative">
+      <div class="container position-relative">
+        <div class="text-center mb-5">
+          <h4 class="text-uppercase fw-bold text-primary" data-en="Services" data-pt="Serviços">Services</h4>
+          <hr class="w-25 mx-auto" />
+          <h2 class="mb-4" data-en="What Can I Do For You?" data-pt="O Que Posso Fazer Por Você?">What Can I Do For You?</h2>
+          <p class="lead" data-en="Here are some of the services that I offer when it comes to web development and business." data-pt="Aqui estão alguns dos serviços que ofereço quando se trata de desenvolvimento web e negócios.">
+            Here are some of the services that I offer when it comes to web
+            development and business.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <i class="fas fa-globe fa-3x text-primary mb-3"></i>
+            <h3 class="fs-3" data-en="Web Design" data-pt="Design Web">Web Design</h3>
+            <hr class="w-25 mx-auto" />
+            <p class="fs-5" data-en="craft visually appealing and user-friendly websites tailored to your brand's identity." data-pt="crio sites visualmente atraentes e fáceis de usar, adaptados à identidade da sua marca.">
+              craft visually appealing and user-friendly websites tailored to
+              your brand's identity.
+            </p>
+          </div>
+
+          <div class="col-md-6 text-center">
+            <i class="fas fa-code fa-3x text-primary mb-3"></i>
+            <h3 class="fs-3" data-en="Web Development" data-pt="Desenvolvimento Web">Web Development</h3>
+            <hr class="w-25 mx-auto" />
+            <p class="fs-5" data-en="I bring your website to life with clean, efficient, and scalable code." data-pt="Dou vida ao seu site com código limpo, eficiente e escalável.">
+              I bring your website to life with clean, efficient, and scalable
+              code.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact text-bg-dark bg-gradient py-3" id="contact-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div class="text-center mb-5">
+              <h4 class="text-uppercase fw-bold text-primary" data-en="Contact" data-pt="Contato">Contact</h4>
+              <hr class="w-25 mx-auto" />
+              <h2 class="mb-4" data-en="Let's Connect!" data-pt="Vamos nos Conectar!">Let's Connect!</h2>
+              <p class="lead" data-en="I'd love to hear from you. Whether you have a question, a project in mind, or just want to say hello, feel free to reach out."
+                              data-pt="Adoraria ouvir de você. Seja para uma pergunta, um projeto em mente, ou apenas para dizer olá, sinta-se à vontade para entrar em contato.">
+                I'd love to hear from you. Whether you have a question, a
+                project in mind, or just want to say hello, feel free to reach
+                out.
+              </p>
+            </div>
+
+            <!-- Form -->
+            <form
+              name="contact"
+              action="https://formspree.io/f/myzjwlgl"
+              method="POST"
+            >
+              <div class="mb-5">
+                <input
+                  type="email"
+                  class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 border-muted text-white"
+                  name="email"
+                  id="email-input"
+                  data-placeholder-en="Email"
+                  data-placeholder-pt="Email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="mb-5">
+                <textarea
+                  class="form-control bg-transparent border-top-0 border-start-0 border-end-0 rounded-0 border-muted text-white"
+                  name="message"
+                  id="message-input"
+                  data-placeholder-en="Message"
+                  data-placeholder-pt="Mensagem"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+              <div class="mb-5 d-grid">
+                <button type="submit" class="btn btn-primary" data-en="Submit" data-pt="Enviar">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Footer -->
+        <div class="text-center mt-5">
+          <p class="flex-grow-1">Copyright &copy; 2025</p>
+        </div>
+      </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

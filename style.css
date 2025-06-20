@@ -1,0 +1,25 @@
+body{
+  background-color:#FBF6EE;
+  font-family: 'Sono', sans-serif;
+  background-color:#f2f2f2;
+}
+
+img{
+  border:20px solid #ddd;
+  border-radius:4px;
+  padding:30px;
+  width:200px;
+}
+
+h1{
+  color:#FFB534;
+  font-family: 'Architects Daughter', cursive;
+}
+
+h2{
+  color:#65B741;
+}
+
+footer{
+  font-size:14px;
+}
